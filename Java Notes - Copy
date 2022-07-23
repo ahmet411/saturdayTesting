@@ -1,0 +1,315 @@
+Java Notes
+{} -> Curly braces
+[] -> Square brackets
+() -> Paranthesis
+;  -> Semicolons
+:  -> Colons
+"" -> Double quotes
+'' -> Single quotes
+
+---------
+
+Java Components
+	JDK -> Java Development Kit
+		Tools (Java Compiler + Java Debugger + JavaDoc) + JRE
+	JRE -> Java Runtime Environment
+		Java Libraries + Java Security files + JVM
+	JVM -> Java Virtual Machine (Abstract)
+		Code Loader -> Code Verifier -> Interpreter
+
+Code Compilation
+	Converting source code into byte code.
+
+--------------------
+
+Logical operators
+&&   ||
+
+true  && true   -> true
+true  && false  -> false
+false && true   -> false
+false && false  -> false
+
+
+true  || true   -> true
+true  || false  -> true
+false || true   -> true
+false || false  -> false
+
+
+Unary operators
+++ --
+
+int a=10;
+
+++a;  -> pre increment
+--a;  -> pre decrement
+a++;  -> post increment
+a--;  -> post decrement
+
+
+if/else conditional statement
+
+if(boolean){
+	// body of if statement
+}else if(boolean){
+	// body of if else statement
+}else if(boolean){
+	// body of if else statement
+}else{
+	// body of else statement
+}
+
+-------------
+
+String methods
+
+String name="John";
+
+System.out.println(name); // J
+
+------------------
+
+String methods:
+
+.toUpperCase();      -> It is converting string to upper case
+.toLowerCase();      -> It is converting string to lower case
+.length();           -> Returns number(int) of letters in string
+.charAt(0);          -> Returns character(char) of provided index
+.indexOf('a');       -> Returns index(int) of character
+.substring(2,5);     -> Returns text value(String) of provided indexes
+.replace('a','o');   -> Returns text value with replaced characters/text
+.contains("Test");   -> Returns true/false if the provided "Test"(String) is in value
+.startsWith("Soft"); -> Returns true/false(boolean) if String starts with provided value
+.endsWith("test");   -> Returns true/false(boolean) if String ends with provided value
+.trim();             -> Returns String without space in the beginning and in the end
+.equals("add");      -> Returns true/false(boolean) if String equals to provided parameter
+.equalsIgnoreCase("")-> Returns true/false(boolean) if String equals to provided parameter(cases ignored)
+
+---------
+
+Conditional statements:
+	if / else statement
+	switch statement
+	ternary operator
+
+Loops:
+	while loop
+	do while loop
+	for loop
+	for each loop
+
+-------------
+
+Arrays:
+
+1. Arrays size is fixed (It is not changeable)
+	int[] nums=new int[5];
+2. We can create arrays out of any variable
+	Primitives -> int, long, boolean...
+	References -> String...
+3. We can sort array using Arrays.sort(); method (It sorts by ASCII table) -> Ascending order(lowestest to highest)
+4. split(); method in String returns array of Strings
+	String sentence="I love Java";
+	String[] words=sentence.split(" ");
+	[I,love,Java]
+	Sysout(words[1]); -> love
+5. To print all values of array as String we use Arrays.toString(array); method
+6. For Each loop works with arrays. It loops through each value of array.
+	int[] nums={4,1,2,7,3};
+	for(int num : nums){}
+7. .length; returns number of elements in array
+8. Creating arrays:
+	int[] nums=new int[5];
+	int[] nums=new int[]{5,2,3,1,7};
+	int[] nums={4,3,2,6,7};
+9. BinarySearch -> is returning index number of provided value 
+	* It should be sorted before we apply binarySearch
+	* If it is not sorted then it will give unpredicted output
+10. Multidimensional array.
+
+
+-------------------------
+
+String vs StringBuilder:
+
+1. String is immutable -> can not modify value in string pool, it will create new object each time.
+   StringBuilder is mutable -> can modify value and it will not create new object.
+
+2. String objects stored in String pool
+   StringBuilder objects stored in Heap
+
+3.  == vs .equals();
+	==		   -> operator
+	.equals(); -> method
+
+	== and .equals(); -> Stringbuilder will compare if both references pointing to the same object
+	== -> String will compare if both references pointint to same object
+	.equals(); -> String will compare if values are equals
+
+4. 	If we concatenating value multiple times then it is better to use StringBuilder for code performance.
+
+-----------------------
+
+Static methods
+	If we mark our method as static, then we can call it by class name.
+
+Non static methods
+	If our method is non static, then we should create an object to call the method.	
+
+
+
+Method overloading:
+------------------
+
+1. Method names should be same
+2. Parameters should be diferent 
+3. Return type can be different
+4. Can be static and non static
+5. They should be in same class
+
+
+Static methods:
+
+Static -> Static
+non Static -> non static
+non static -> static
+static CAN NOT call non static
+
+
+Static Variables:
+
+We can call them with class name.
+
+----------------------
+
+Class and Object:
+
+Class:
+	Class is a template/blueprint for an object
+	In class we can define attributes and methods
+	public class ClassName{
+	
+	}
+
+Object:
+	Object is instance of class
+	Each object will have it is own copy of attributes and methods
+	We can create as many objects as we want out of class:
+	ClassName name1=new ClassName();
+	ClassName name2=new ClassName();
+
+Constructor:
+	Constructor is used initialize attributes/instance variables
+	Constructor overloading is when we have multiple constructors with different parameters
+	Constructor doesn't have return
+	Constructor should have same name as class name
+	Default no parameter constructor is created in all classes if no constructor is declared
+	If any constructor is declared then default constructor is removed
+	Constructor is called when object is created/instantiated
+
+"this" keyword -> is used to call variables and methods from class level.	
+
+Variables
+	Instance variables -> non static variables created on class level
+	Class/Static variables -> static variables created on class level
+	Local Variables -> created inside of method/constructor or parameters
+
+Instance variable vs Class/Static variable:
+	Instance variable -> will have separate copy for each object
+	Class/Static variable -> will have only one copy for all objects. They belong to class, and we can call them using class name.
+
+
+Static block
+	is used to initialize static variables.
+	It will run once when first object is created.
+
+-------------
+
+Java OOP -> Object Oriented Programming
+
+OOP Languages:
+
+Java
+Python
+Javascript
+C#
+C++
+
+1. OOP -> Object Oriented Programming
+2. POP -> Procedural Oriented Programming
+3. FP  -> Functional Programmming
+
+OOP Benefits:
+	More readable
+	More Reusable
+
+OOP Model
+	Inheritance -> Methods, variables
+	Abstraction -> Abstract methods
+		Abstract Class
+		Interface
+	Polymorphism -> Many forms, Reference can take many types of Objects
+		Car car=new Lambogini();
+		List list=new ArrayList();
+	Encapsulation -> Hiding variables and giving them access through getters and setters	
+
+
+Inheritance:
+	- Parent and child relationship where child class inherits variables and methods from parent class.
+	- Constructor of child class should call parent class's constructor
+		* We use super(); keyword to call parent class's constructor
+
+What is being created by default in Java class?
+	- If class doesn't inherit any class, then it will inherit Object class by default
+	- If class doesn't have any constructor, then it will create no parameter constructor by default
+	- Child class's constructor will call parent class constructor by default
+
+Method overriding:
+	When child class gives it is own implementation for parent class's method.
+		- We use @Override annotation to make sure we are overriding a method
+		- Method signature should be same
+		- Return type should be same OR Covariant(Subclass)
+
+
+Access modifiers:
+	public     -> It can be accessible everywhere
+	protected  -> It can be accessible only within same package classes and different package subclasses
+	default    -> It can be accessible only within same package classes
+	private    -> It can be accessible only within same class
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
